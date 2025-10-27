@@ -1,0 +1,416 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- Variabel Global (Default: Dark Mode) --- */
+:root {
+    --main-bg-color: #121820;
+    --text-color: #ffffff;
+    --link-color: #c0c0c0;
+    --hover-color: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --toggle-icon-color: #ffffff;
+    --h1-font-size: 3.8rem;
+}
+
+/* --- Variabel Light Mode --- */
+body.light-mode {
+    --main-bg-color: #f0f2f5;
+    --text-color: #2c3e50;
+    --link-color: #555555;
+    --hover-color: #000000;
+    --border-color: #e0e0e0;
+    --toggle-icon-color: #2c3e50;
+    --h1-font-size: 3.8rem;
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* --- Navbar (Header) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo a {
+    display: none;
+}
+
+.navbar-logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--hover-color);
+}
+
+.toggle-icon i {
+    color: var(--toggle-icon-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: color 0.3s, border-color 0.3s;
+}
+.toggle-icon i:hover {
+    color: var(--hover-color);
+}
+
+
+/* --- Hero Section (Halaman Home) --- */
+.hero-section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 100px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 50px 0;
+}
+
+.logo-shield {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hero-logo-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    animation: bounce 2s infinite alternate ease-in-out;
+}
+
+
+.text-content h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.text-content .subtitle {
+    font-size: 1.2rem;
+    color: var(--link-color);
+    line-height: 1.5;
+}
+
+/* --- Halaman Konten Umum (Style dasar untuk semua halaman) --- */
+.page-content {
+    flex-grow: 1;
+    padding: 60px 0;
+}
+
+/* KODE BARU UNTUK LAYOUT MEMBER (LIST) 
+*/
+
+/* Header Halaman Member */
+.member-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.member-header .fa-users {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.member-header .page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.member-header .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--link-color);
+}
+
+/* Container List Member */
+.member-list {
+    width: 100%;
+    border-top: 1px solid var(--border-color); /* Garis atas tabel */
+}
+
+/* Baris (Header & Data) */
+.member-list-header,
+.member-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px; /* Padding untuk tiap baris */
+    border-bottom: 1px solid var(--border-color); /* Garis pemisah antar baris */
+}
+
+/* Style Khusus Header List */
+.member-list-header {
+    color: var(--link-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Style Khusus Baris Data Member */
+.member-row {
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Efek hover untuk baris data */
+.member-row:hover {
+    background-color: var(--border-color); /* Warna hover lembut */
+}
+
+/* Pengaturan Kolom (Gunakan % yang sama untuk header & baris) */
+.col-nickname {
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 15px;
+}
+.col-expertise {
+    flex-basis: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.col-join-date {
+    flex-basis: 15%;
+}
+.col-social {
+    flex-basis: 20%;
+}
+
+/* Konten Kolom Nickname */
+.member-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--border-color); /* Tampil abu-abu jika gambar error */
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-nickname {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-color);
+}
+
+.member-description {
+    font-size: 0.9rem;
+    color: var(--link-color);
+}
+
+/* Konten Kolom Expertise (Badge/Pill) */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: var(--bg-color, #555); /* fallback color */
+    color: var(--text-color, #fff); /* fallback color */
+}
+
+/* Konten Kolom Join Date */
+.col-join-date {
+    color: var(--text-color);
+    font-weight: 500;
+    padding-right: 15px;
+}
+
+/* Konten Kolom Social */
+.col-social a {
+    color: var(--link-color);
+    font-size: 1.2rem;
+    margin-right: 12px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.col-social a:hover {
+    color: var(--hover-color);
+}
+
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.social-links {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.social-links a {
+    color: var(--link-color);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--hover-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--link-color);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 50px 0;
+    }
+    .text-content h1 {
+        font-size: 3rem;
+    }
+    .logo-shield {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .text-content h1 {
+        font-size: 2.5rem;
+    }
+    .text-content .subtitle {
+        font-size: 1rem;
+    }
+
+    /* --- Penyesuaian Halaman Member di HP --- */
+    
+    /* Sembunyikan header tabel di HP */
+    .member-list-header {
+        display: none;
+    }
+
+    /* Buat baris member jadi vertikal */
+    .member-row {
+        flex-direction: column;
+        align-items: flex-start; /* Rata kiri semua */
+        gap: 15px;
+        padding: 20px;
+    }
+
+    /* Atur ulang lebar kolom */
+    .col-nickname,
+    .col-expertise,
+    .col-join-date,
+    .col-social {
+        flex-basis: auto;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    /* Beri label pada data (karena header disembunyikan) */
+    .col-expertise::before {
+        content: 'EXPERTISE';
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--link-color);
+        margin-bottom: 5px;
+        display: block;
+    }
+    .col-join-date::before {
+        content: 'JOIN DATE';
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--link-color);
+        margin-bottom: 5px;
+        display: block;
+    }
+    .col-social::before {
+        content: 'SOCIAL';
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--link-color);
+        margin-bottom: 5px;
+        display: block;
+    }
+}
+
+/* --- Keyframes Animasi --- */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
