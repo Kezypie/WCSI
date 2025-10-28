@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,16 +15,17 @@
     <header class="navbar">
         <div class="logo">
             <img src="dark.png" alt="WCS Navbar Logo" class="navbar-logo-image" id="navbar-logo">
-            <a href="index.html"></a> </div>
+            <a href="index.html"></a>
+        </div>
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="members.html">Members</a>
             <a href="achievements.html">Achievements</a>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="portofolio.html">Portofolio</a>
             <a href="blog.html">Blog</a>
         </nav>
         <div class="toggle-icon">
-            <i class="fas fa-moon" id="theme-toggle"></i> 
+            <i class="fas fa-moon" id="theme-toggle"></i>
         </div>
     </header>
 
@@ -37,7 +39,7 @@
                     <h1>White Cyber Security</h1>
 
                     <p class="subtitle" id="typing-text"></p>
-                    
+
                     <span id="original-text" style="display: none;">
                         WCS is an independent cyber security community, mostly consists of <br>
                         Semen Indonesia International University students.
@@ -49,16 +51,20 @@
 
     <footer class="site-footer">
         <div class="social-links">
-            <a href="https://www.instagram.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.github.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://www.github.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://www.twitter.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://www.twitter.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer"
+                aria-label="Twitter">
                 <i class="fab fa-twitter"></i>
             </a>
             <a href="mailto:emailanda@contoh.com" aria-label="Email">
@@ -66,7 +72,7 @@
             </a>
         </div>
         <p class="copyright">
-           White Cyber Security &bull; &copy; 2025 &bull; Gresik, Indonesia
+            White Cyber Security &bull; &copy; 2025 &bull; Gresik, Indonesia
         </p>
     </footer>
 
@@ -74,9 +80,9 @@
         // --- Skrip Tema Terang/Gelap ---
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        const navbarLogo = document.getElementById('navbar-logo'); 
+        const navbarLogo = document.getElementById('navbar-logo');
         const currentTheme = localStorage.getItem('theme');
-        const logoNavbarDarkPath = 'dark.png'; 
+        const logoNavbarDarkPath = 'dark.png';
         const logoNavbarLightPath = 'light.png'; // Pastikan file ini ada
 
         function applyTheme(theme) {
@@ -84,19 +90,19 @@
                 body.classList.remove('dark-mode');
                 body.classList.add('light-mode');
                 themeToggle.classList.replace('fa-moon', 'fa-sun');
-                if (navbarLogo) navbarLogo.src = logoNavbarLightPath; 
+                if (navbarLogo) navbarLogo.src = logoNavbarLightPath;
             } else { // 'dark-mode'
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
                 themeToggle.classList.replace('fa-sun', 'fa-moon');
-                if (navbarLogo) navbarLogo.src = logoNavbarDarkPath; 
+                if (navbarLogo) navbarLogo.src = logoNavbarDarkPath;
             }
             localStorage.setItem('theme', theme);
         }
         if (currentTheme) {
             applyTheme(currentTheme);
         } else {
-            applyTheme('dark-mode'); 
+            applyTheme('dark-mode');
         }
         themeToggle.addEventListener('click', () => {
             if (body.classList.contains('dark-mode')) {
@@ -107,10 +113,10 @@
         });
 
         // --- Skrip Efek Mengetik Biasa (Looping) ---
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const typingTextElement = document.getElementById('typing-text');
             const originalTextElement = document.getElementById('original-text');
-            
+
             // Pastikan elemen ada (hanya di halaman home)
             if (typingTextElement && originalTextElement) {
                 const textToType = originalTextElement.innerHTML.replace(/<br>/g, '\n').trim();
@@ -147,4 +153,5 @@
     </script>
 
 </body>
+
 </html>
