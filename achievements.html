@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - White Cyber Security</title> 
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="dark.png" alt="WCS Navbar Logo" class="navbar-logo-image" id="navbar-logo">
+            <a href="index.html"></a> 
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="members.html">Members</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <div class="toggle-icon">
+            <i class="fas fa-moon" id="theme-toggle"></i> 
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            
+            <div class="achievement-header">
+                <i class="fas fa-trophy"></i>
+                <h1 class="page-title">Achievements</h1>
+                <p class="page-subtitle">Our proud achievements.</p>
+            </div>
+            
+            <h2 class="section-title">International</h2>
+            
+            <div class="achievements-grid">
+                
+                <div class="achievement-card">
+                    <div class="ribbon ribbon-first">#1</div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">NONE</h3>
+                        <p class="card-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>19 September 2025 - 21 September 2025</span>
+                        </p>
+                        <p class="card-info">
+                            <i class="fas fa-users"></i>
+                            <span>972 Teams</span>
+                        </p>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        <a href="#" target="_blank" aria-label="CTFTime"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="ribbon ribbon-second">#2</div>
+                    <div class="card-content">
+                        <h3 class="card-title">NONE</h3>
+                        <p class="card-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>22 September 2025 - 27 September 2025</span>
+                        </p>
+                        <p class="card-info">
+                            <i class="fas fa-users"></i>
+                            <span>7084 Teams</span>
+                        </p>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        <a href="#" target="_blank" aria-label="CTFTime"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="ribbon ribbon-second">#2</div>
+                    <div class="card-content">
+                        <h3 class="card-title">NONE</h3>
+                        <p class="card-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>8 August 2025 - 10 August 2025</span>
+                        </p>
+                        <p class="card-info">
+                            <i class="fas fa-users"></i>
+                            <span>884 Teams</span>
+                        </p>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        <a href="#" target="_blank" aria-label="CTFTime"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="ribbon ribbon-first">#1</div>
+                    <div class="card-content">
+                        <h3 class="card-title">NONE</h3>
+                        <p class="card-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>5 July 2025 - 7 July 2025</span>
+                        </p>
+                        <p class="card-info">
+                            <i class="fas fa-users"></i>
+                            <span>473 Teams</span>
+                        </p>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        <a href="#" target="_blank" aria-label="CTFTime"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                </div> </div> </main>
+
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.github.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.twitter.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:emailanda@contoh.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copyright">
+           White Cyber Security &bull; &copy; 2025 &bull; Gresik, Indonesia
+        </p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const navbarLogo = document.getElementById('navbar-logo'); 
+        const currentTheme = localStorage.getItem('theme');
+        const logoNavbarDarkPath = 'dark.png'; 
+        const logoNavbarLightPath = 'light.png'; 
+
+        function applyTheme(theme) {
+            if (theme === 'light-mode') {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                themeToggle.classList.replace('fa-moon', 'fa-sun');
+                if (navbarLogo) navbarLogo.src = logoNavbarLightPath; 
+            } else { // 'dark-mode'
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                themeToggle.classList.replace('fa-sun', 'fa-moon');
+                if (navbarLogo) navbarLogo.src = logoNavbarDarkPath; 
+            }
+            localStorage.setItem('theme', theme);
+        }
+        if (currentTheme) {
+            applyTheme(currentTheme);
+        } else {
+            applyTheme('dark-mode'); 
+        }
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                applyTheme('light-mode');
+            } else {
+                applyTheme('dark-mode');
+            }
+        });
+    </script>
+
+</body>
+</html>

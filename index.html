@@ -14,8 +14,7 @@
     <header class="navbar">
         <div class="logo">
             <img src="dark.png" alt="WCS Navbar Logo" class="navbar-logo-image" id="navbar-logo">
-            <a href="index.html">WCS</a> 
-        </div>
+            <a href="index.html"></a> </div>
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="members.html">Members</a>
@@ -32,14 +31,17 @@
         <div class="container">
             <div class="hero-content">
                 <div class="logo-shield">
-                    <img src="Logo.png" alt="HCS Main Logo" class="hero-logo-image">
+                    <img src="Logo.png" alt="WCS Main Logo" class="hero-logo-image">
                 </div>
                 <div class="text-content">
                     <h1>White Cyber Security</h1>
-                    <p class="subtitle">
+
+                    <p class="subtitle" id="typing-text"></p>
+                    
+                    <span id="original-text" style="display: none;">
                         WCS is an independent cyber security community, mostly consists of <br>
-                       Semen Indonesia International University students.
-                    </p>
+                        Semen Indonesia International University students.
+                    </span>
                 </div>
             </div>
         </div>
@@ -47,23 +49,19 @@
 
     <footer class="site-footer">
         <div class="social-links">
-            <a href="https://www.instagram.com/krsrffam target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            
-            <a href="https://www.github.com/Kezypie" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://www.github.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            
-            <a href="https://www.linkedin.com/in/krisna-amrullah-421016383" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <div></div>
-            <a href="https://www.twitter.com/dappakidzz" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://www.twitter.com/NAMA_AKUN_ANDA" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <i class="fab fa-twitter"></i>
             </a>
-            
-            <a href="mailto:wwwkrisna502@gmail.com" aria-label="Email">
+            <a href="mailto:emailanda@contoh.com" aria-label="Email">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
@@ -73,13 +71,13 @@
     </footer>
 
     <script>
+        // --- Skrip Tema Terang/Gelap ---
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
         const navbarLogo = document.getElementById('navbar-logo'); 
         const currentTheme = localStorage.getItem('theme');
-
         const logoNavbarDarkPath = 'dark.png'; 
-        const logoNavbarLightPath = 'light.png'; 
+        const logoNavbarLightPath = 'light.png'; // Pastikan file ini ada
 
         function applyTheme(theme) {
             if (theme === 'light-mode') {
@@ -95,21 +93,55 @@
             }
             localStorage.setItem('theme', theme);
         }
-
-        // Terapkan tema yang tersimpan saat halaman dimuat
         if (currentTheme) {
             applyTheme(currentTheme);
         } else {
-            // Default ke Dark Mode jika tidak ada preferensi
             applyTheme('dark-mode'); 
         }
-
-        // Event listener untuk tombol toggle
         themeToggle.addEventListener('click', () => {
             if (body.classList.contains('dark-mode')) {
                 applyTheme('light-mode');
             } else {
                 applyTheme('dark-mode');
+            }
+        });
+
+        // --- Skrip Efek Mengetik Biasa (Looping) ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingTextElement = document.getElementById('typing-text');
+            const originalTextElement = document.getElementById('original-text');
+            
+            // Pastikan elemen ada (hanya di halaman home)
+            if (typingTextElement && originalTextElement) {
+                const textToType = originalTextElement.innerHTML.replace(/<br>/g, '\n').trim();
+                let i = 0;
+                const speed = 50; // Kecepatan mengetik
+                const pauseTime = 2000; // Waktu jeda setelah selesai (2 detik)
+
+                function typeWriter() {
+                    if (i < textToType.length) {
+                        // Jika karakter adalah newline, masukkan <br>
+                        if (textToType.charAt(i) === '\n') {
+                            typingTextElement.innerHTML += '<br>';
+                        } else {
+                            typingTextElement.innerHTML += textToType.charAt(i);
+                        }
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    } else {
+                        // Teks selesai diketik, tunggu lalu reset
+                        setTimeout(resetTyping, pauseTime);
+                    }
+                }
+
+                function resetTyping() {
+                    typingTextElement.innerHTML = ''; // Kosongkan teks
+                    i = 0; // Reset counter
+                    typeWriter(); // Mulai mengetik lagi
+                }
+
+                // Mulai efek mengetik untuk pertama kali
+                typeWriter();
             }
         });
     </script>

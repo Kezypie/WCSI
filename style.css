@@ -39,6 +39,9 @@ body {
     display: flex;
     flex-direction: column;
     transition: background-color 0.4s ease, color 0.4s ease;
+    
+    /* --- INI ADALAH EFEK TRANSISI HALAMAN --- */
+    animation: pageTransitionIn 0.4s ease-out;
 }
 
 /* --- Navbar (Header) --- */
@@ -146,11 +149,20 @@ body {
     padding: 60px 0;
 }
 
-/* ================================================= */
-/* ==== INI STYLE UNTUK HALAMAN MEMBER YANG BARU ==== */
-/* ================================================= */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
 
-/* Header Halaman Member */
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--link-color);
+}
+
+
+/* --- Halaman Members --- */
 .member-header {
     text-align: left;
     margin-bottom: 30px;
@@ -162,35 +174,20 @@ body {
     margin-bottom: 10px;
 }
 
-.member-header .page-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: var(--text-color);
-}
-
-.member-header .page-subtitle {
-    font-size: 1.1rem;
-    color: var(--link-color);
-}
-
-/* Container List Member */
 .member-list {
     width: 100%;
-    border-top: 1px solid var(--border-color); /* Garis atas tabel */
+    border-top: 1px solid var(--border-color);
 }
 
-/* Baris (Header & Data) */
 .member-list-header,
 .member-row {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 20px 10px; /* Padding untuk tiap baris */
-    border-bottom: 1px solid var(--border-color); /* Garis pemisah antar baris */
+    padding: 20px 10px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Style Khusus Header List */
 .member-list-header {
     color: var(--link-color);
     font-size: 0.8rem;
@@ -199,17 +196,13 @@ body {
     text-transform: uppercase;
 }
 
-/* Style Khusus Baris Data Member */
 .member-row {
     transition: background-color 0.2s ease-in-out;
 }
-
-/* Efek hover untuk baris data */
 .member-row:hover {
-    background-color: var(--border-color); /* Warna hover lembut */
+    background-color: var(--border-color);
 }
 
-/* Pengaturan Kolom (Gunakan % yang sama untuk header & baris) */
 .col-nickname {
     flex-basis: 30%;
     display: flex;
@@ -225,18 +218,20 @@ body {
 }
 .col-join-date {
     flex-basis: 15%;
+    color: var(--text-color);
+    font-weight: 500;
+    padding-right: 15px;
 }
 .col-social {
     flex-basis: 20%;
 }
 
-/* Konten Kolom Nickname */
 .member-avatar {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     object-fit: cover;
-    background-color: var(--border-color); /* Tampil abu-abu jika gambar error */
+    background-color: var(--border-color);
 }
 
 .member-info {
@@ -255,25 +250,16 @@ body {
     color: var(--link-color);
 }
 
-/* Konten Kolom Expertise (Badge/Pill) */
 .badge {
     display: inline-block;
     padding: 4px 12px;
     font-size: 0.8rem;
     font-weight: 600;
     border-radius: 5px;
-    background-color: var(--bg-color, #555); /* fallback color */
-    color: var(--text-color, #fff); /* fallback color */
+    background-color: var(--bg-color, #555);
+    color: var(--text-color, #fff);
 }
 
-/* Konten Kolom Join Date */
-.col-join-date {
-    color: var(--text-color);
-    font-weight: 500;
-    padding-right: 15px;
-}
-
-/* Konten Kolom Social */
 .col-social a {
     color: var(--link-color);
     font-size: 1.2rem;
@@ -283,6 +269,124 @@ body {
 }
 .col-social a:hover {
     color: var(--hover-color);
+}
+
+
+/* --- Halaman Achievements --- */
+.achievement-header {
+    text-align: left;
+    margin-bottom: 40px; 
+}
+
+.achievement-header .fa-trophy {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+/* Garis pemisah "International" */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.section-title::before,
+.section-title::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+/* Grid untuk kartu */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 25px;
+}
+
+/* Kartu achievement */
+.achievement-card {
+    background-color: var(--main-bg-color); 
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Taruh link di bawah */
+    position: relative; /* Penting untuk pita */
+    overflow: hidden; /* Penting untuk pita */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.card-info {
+    font-size: 0.9rem;
+    color: var(--link-color);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card-info i {
+    width: 15px; /* Agar teks rapi lurus */
+}
+
+.card-links {
+    display: flex;
+    gap: 15px;
+    font-size: 1.1rem; /* Sedikit lebih kecil dari ikon sosial member */
+}
+.card-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.card-links a:hover {
+    color: var(--hover-color);
+}
+
+/* Pita Juara */
+.ribbon {
+    position: absolute;
+    top: 15px;
+    right: -30px; /* Tarik keluar agar bisa diputar */
+    width: 120px;
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    transform: rotate(45deg); /* Putar 45 derajat */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ribbon.ribbon-first {
+    background-color: #ffc107; /* Kuning Emas */
+    color: #111;
+}
+.ribbon.ribbon-second {
+    background-color: #c0c0c0; /* Silver */
+    color: #111;
 }
 
 
@@ -336,6 +440,11 @@ body {
         width: 150px;
         height: 150px;
     }
+    
+    /* Kartu achievement jadi 1 kolom */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -355,18 +464,15 @@ body {
     }
 
     /* --- Penyesuaian Halaman Member di HP --- */
-    
     .member-list-header {
         display: none;
     }
-
     .member-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
         padding: 20px;
     }
-
     .col-nickname,
     .col-expertise,
     .col-join-date,
@@ -375,7 +481,6 @@ body {
         width: 100%;
         padding-right: 0;
     }
-
     .col-expertise::before {
         content: 'EXPERTISE';
         font-size: 0.8rem;
@@ -400,6 +505,19 @@ body {
         margin-bottom: 5px;
         display: block;
     }
+    
+    /* --- Penyesuaian Halaman Achievement di HP --- */
+    .achievements-grid {
+        grid-template-columns: 1fr; /* Tetap 1 kolom */
+    }
+    .achievement-card {
+        flex-direction: column; /* Konten & link jadi vertikal */
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .card-links {
+        margin-top: 10px; /* Beri jarak antara konten dan link */
+    }
 }
 
 /* --- Keyframes Animasi --- */
@@ -409,5 +527,17 @@ body {
     }
     50% {
         transform: translateY(-15px);
+    }
+}
+
+/* --- INI ADALAH KEYFRAME UNTUK TRANSISI HALAMAN --- */
+@keyframes pageTransitionIn {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
