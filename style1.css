@@ -146,8 +146,9 @@ body {
     padding: 60px 0;
 }
 
-/* KODE BARU UNTUK LAYOUT MEMBER (LIST) 
-*/
+/* ================================================= */
+/* ==== INI STYLE UNTUK HALAMAN MEMBER YANG BARU ==== */
+/* ================================================= */
 
 /* Header Halaman Member */
 .member-header {
@@ -355,20 +356,17 @@ body {
 
     /* --- Penyesuaian Halaman Member di HP --- */
     
-    /* Sembunyikan header tabel di HP */
     .member-list-header {
         display: none;
     }
 
-    /* Buat baris member jadi vertikal */
     .member-row {
         flex-direction: column;
-        align-items: flex-start; /* Rata kiri semua */
+        align-items: flex-start;
         gap: 15px;
         padding: 20px;
     }
 
-    /* Atur ulang lebar kolom */
     .col-nickname,
     .col-expertise,
     .col-join-date,
@@ -378,7 +376,6 @@ body {
         padding-right: 0;
     }
 
-    /* Beri label pada data (karena header disembunyikan) */
     .col-expertise::before {
         content: 'EXPERTISE';
         font-size: 0.8rem;

@@ -50,12 +50,10 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
-/* Sembunyikan link teks logo lama */
 .logo a {
     display: none;
 }
 
-/* Styling untuk gambar logo di Navbar */
 .navbar-logo-image {
     height: 40px;
     width: auto;
@@ -112,7 +110,6 @@ body {
     padding: 50px 0;
 }
 
-/* Container untuk gambar logo besar */
 .logo-shield {
     width: 250px;
     height: 250px;
@@ -122,13 +119,10 @@ body {
     flex-shrink: 0;
 }
 
-/* Styling untuk gambar logo besar */
 .hero-logo-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    
-    /* Ini adalah kode animasi bounce */
     animation: bounce 2s infinite alternate ease-in-out;
 }
 
@@ -146,80 +140,148 @@ body {
     line-height: 1.5;
 }
 
-/* --- Halaman Konten Umum (Members, Blog, dll.) --- */
-
+/* --- Halaman Konten Umum (Style dasar untuk semua halaman) --- */
 .page-content {
-    flex-grow: 1; /* Memastikan konten mengisi ruang ke footer */
+    flex-grow: 1;
     padding: 60px 0;
-    text-align: center;
 }
 
-.page-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+/* ================================================= */
+/* ==== INI STYLE UNTUK HALAMAN MEMBER YANG BARU ==== */
+/* ================================================= */
+
+/* Header Halaman Member */
+.member-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.member-header .fa-users {
+    font-size: 2.2rem;
+    color: var(--text-color);
     margin-bottom: 10px;
+}
+
+.member-header .page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
     color: var(--text-color);
 }
 
-.page-subtitle {
+.member-header .page-subtitle {
     font-size: 1.1rem;
     color: var(--link-color);
-    margin-bottom: 50px;
 }
 
-/* --- Grid untuk Halaman Members --- */
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    text-align: left;
+/* Container List Member */
+.member-list {
+    width: 100%;
+    border-top: 1px solid var(--border-color); /* Garis atas tabel */
 }
 
-.member-card {
-    background-color: var(--main-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+/* Baris (Header & Data) */
+.member-list-header,
+.member-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px; /* Padding untuk tiap baris */
+    border-bottom: 1px solid var(--border-color); /* Garis pemisah antar baris */
 }
 
-.member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.member-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Membuat foto jadi bulat */
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid var(--border-color);
-}
-
-.member-name {
-    font-size: 1.3rem;
+/* Style Khusus Header List */
+.member-list-header {
+    color: var(--link-color);
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-.member-role {
+/* Style Khusus Baris Data Member */
+.member-row {
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Efek hover untuk baris data */
+.member-row:hover {
+    background-color: var(--border-color); /* Warna hover lembut */
+}
+
+/* Pengaturan Kolom (Gunakan % yang sama untuk header & baris) */
+.col-nickname {
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 15px;
+}
+.col-expertise {
+    flex-basis: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.col-join-date {
+    flex-basis: 15%;
+}
+.col-social {
+    flex-basis: 20%;
+}
+
+/* Konten Kolom Nickname */
+.member-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--border-color); /* Tampil abu-abu jika gambar error */
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-nickname {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-color);
+}
+
+.member-description {
     font-size: 0.9rem;
     color: var(--link-color);
-    margin-bottom: 15px;
 }
 
-.member-socials a {
+/* Konten Kolom Expertise (Badge/Pill) */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: var(--bg-color, #555); /* fallback color */
+    color: var(--text-color, #fff); /* fallback color */
+}
+
+/* Konten Kolom Join Date */
+.col-join-date {
+    color: var(--text-color);
+    font-weight: 500;
+    padding-right: 15px;
+}
+
+/* Konten Kolom Social */
+.col-social a {
     color: var(--link-color);
-    margin: 0 8px;
     font-size: 1.2rem;
+    margin-right: 12px;
     text-decoration: none;
     transition: color 0.3s;
 }
-
-.member-socials a:hover {
+.col-social a:hover {
     color: var(--hover-color);
 }
 
@@ -234,11 +296,9 @@ body {
 
 .social-links {
     margin-bottom: 15px;
-    /* --- PERBAIKAN UNTUK IKON RAPI --- */
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    /* ---------------------------------- */
 }
 
 .social-links a {
@@ -246,7 +306,7 @@ body {
     font-size: 1.5rem;
     margin: 0 10px;
     transition: color 0.3s;
-    text-decoration: none; /* Ini untuk menghilangkan garis bawah */
+    text-decoration: none;
 }
 
 .social-links a:hover {
@@ -293,15 +353,61 @@ body {
     .text-content .subtitle {
         font-size: 1rem;
     }
+
+    /* --- Penyesuaian Halaman Member di HP --- */
+    
+    .member-list-header {
+        display: none;
+    }
+
+    .member-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .col-nickname,
+    .col-expertise,
+    .col-join-date,
+    .col-social {
+        flex-basis: auto;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .col-expertise::before {
+        content: 'EXPERTISE';
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--link-color);
+        margin-bottom: 5px;
+        display: block;
+    }
+    .col-join-date::before {
+        content: 'JOIN DATE';
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--link-color);
+        margin-bottom: 5px;
+        display: block;
+    }
+    .col-social::before {
+        content: 'SOCIAL';
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--link-color);
+        margin-bottom: 5px;
+        display: block;
+    }
 }
 
 /* --- Keyframes Animasi --- */
-/* Ini adalah definisi animasi bounce */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px); /* Seberapa tinggi pantulannya */
+        transform: translateY(-15px);
     }
 }
